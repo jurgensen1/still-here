@@ -15,7 +15,7 @@ the_post();
 <section>
 			<div class="recent-card">
 	            <div>
-		            <p><img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" id="recent-card-image" alt="Card Image"><?php  the_content(); ?></p>
+		            <p><?php  the_content(); ?></p>
 	            </div>
 			</div>
 </section>
