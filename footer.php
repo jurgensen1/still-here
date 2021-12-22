@@ -45,7 +45,14 @@
 					</li>
 				</ul>
 			</div>
-			<p>This is a website developed by Stephen Jurgensen</p>
+			<div id="credits">
+				<p>This is a website developed by Stephen Jurgensen</p>
+				<p>Roboto Font by Christian Robertson <br>
+				Open Sans Font by Steve Matteson <br>
+				Koho Font by Cadson Demak<p>
+				<p>Home Page Image: "Vanitas still life," (1646). <br>
+				Rijksmuseum via unsplash.com (Public Domain).</p>
+			</div>
 		</div>
 	</footer>
 </main>

@@ -5,6 +5,7 @@
 function sh_setup(){
     wp_enqueue_style( 'google-fonts','//fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab');
     wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css2?family=KoHo:wght@200;400;600&display=swap');
+	wp_enqueue_style('google-fonts', '//fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
     wp_enqueue_style( 'fontawesome', '//use.fontawesome.com/releases/v5.1.0/css/all.css');
     wp_enqueue_style('style', get_stylesheet_uri(), NULL, microtime(), 'all');
     wp_enqueue_script("main", get_theme_file_uri('/js/main.js'), NULL, microtime(), true);
@@ -35,7 +36,7 @@ function sh_custom_post_type(){
 							'name' => 'Artworks',
 							'singular_name' => 'Artwork',
 							'add_new_item' => 'Add New Artwork',
-							'edit_itme' => 'Edit Artword'
+							'edit_item' => 'Edit Artwork'
 						),
 						'menu-icon' => 'dashicons-clipboard',
 						'public' => true,

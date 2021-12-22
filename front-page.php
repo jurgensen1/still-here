@@ -2,96 +2,55 @@
 
 <div id="banner">
 	<h1>STILL &nbspHERE</h1>
-	<h3>Explorations of Existence &#8212 mostly writing, but other stuff too</h3>
+	<a href="https://www.patreon.com/bePatron?u=56407726">
+		<h2><i class="fab fa-patreon"></i> Patreon Supported</h2>
+	</a>
 </div>
 
 <main>
 
-<?php 
-
-while(have_posts()){
-    the_post();
-
-the_content();
-
-
-}?>
-<?php wp_reset_query(); ?>
-
 <?php  
-/* Recent Card Loop */	
-		$args = array(
-		'post_type' => 'post',
-		'posts_per_page' => 1,	
-		);
-			
-		$blogposts = new WP_Query($args);
-		
-		while($blogposts->have_posts()) {
-			$blogposts->the_post();
 
 ?>
-<div class="recent-card">
-	<div>
-		<a href="<?php the_permalink(); ?>">
-			<h3 ><?php the_title(); ?></h3>
-		</a>
-	</div> 
-	<div>
-		<p><img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" id="recent-card-image" alt="Card Image"><?php  the_excerpt(); ?></p>
-	</div>
-	<div id="recent-read-more">
-		<a href="<?php the_permalink(); ?>" class="recent-btm-readmore">Read More</a>
-	</div>
-</div>
-
-<?php } 
-		
-		wp_reset_query(); 
-		
-?>
-
-	<a href="<?php echo site_url('/blog'); ?>">
-		<h2 class="section-heading">Writings</h2>
-	</a>
-	
 	<section>
-		
+		<div class="front-page-section-heading">
+			<h2 class="section-heading">Selected Writings</h2>
+		</div>
 		<?php  
-		
 		$args = array(
 		'post_type' => 'post',
-		'posts_per_page' => 2,
-        'offset' => 1,	
+		'posts_per_page' => 4,
+        'offset' => 0,	
 		);
 			
 		$blogposts = new WP_Query($args);
 		
 		while($blogposts->have_posts()) {
 			$blogposts->the_post();
-		
-		
 		?>
-		
-		<div class="card">
-			<div class="card-image">
+		<div class="recent-card">
+			<div>
 				<a href="<?php the_permalink(); ?>">
-					<img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="Card Image">	
+					<h2><?php the_title(); ?></h2>
 				</a>
+				<div><h3 class='author'>by <?php the_author(); ?></h3></div>
+			</div> 
+			<div class="mobile-thumbnail">
+				<div class='card-image-image'><img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" id="image" alt="Card Image"></div>
+				<div class='card-image-caption'><?php the_post_thumbnail_caption(); ?></div>	
 			</div>
-			<div class="card-description"> 
-				<a href="<?php the_permalink(); ?>">
-					<h3><?php the_title(); ?></h3>
-				</a>
-                <div class="card-meta-blogpost">
-					by <?php the_author(); ?>  
-					<?php if(get_post_type()== 'post'){ ?>
-					(Under the following: <a href="#"><?php echo get_the_category_list(', '); ?>)</a>
-                    <?php } ?>
-			    </div>
-				<p><?php ;
-                    echo the_excerpt()?>
-				</p>
+			<div class='card-div'>
+				<div class='content'>
+					<div class='card-image'>
+						<div class='card-image-image'><img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" id="image" alt="Card Image"></div>
+						<div class='card-image-caption'><?php the_post_thumbnail_caption(); ?></div>
+					</div>
+					<p><?php  the_excerpt(); ?></p>
+				</div>
+			</div>
+
+
+			<div id="read-more">
 				<a href="<?php the_permalink(); ?>" class="btm-readmore">Read More</a>
 			</div>
 		</div>

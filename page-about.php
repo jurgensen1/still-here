@@ -13,13 +13,12 @@ the_post();
 
 <h2 class="page-heading"><?php the_title(); ?></h2>
 <section>
-			<div class="recent-card">
+			<div class="about-card">
 	            <div>
-		            <p><img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" id="recent-card-image" alt="Card Image"><?php  the_content(); ?></p>
+		            <p><img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" id="about-card-image" alt="Card Image"><?php  the_content(); ?></p>
 	            </div>
 			</div>
-</section>
-		
+</section>	
 		
 <?php } ?>		
 		
